@@ -17,3 +17,11 @@ class Q1
         return true;
     }
 }
+
+class Q2
+{
+    public function literalDateParsing(string $str) : string
+    {
+        return date('Y-m-d', strtotime(substr($str, 4)));
+    }
+}
