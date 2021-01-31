@@ -52,5 +52,20 @@ class Q4
             $num = $res;
         }
         return $num;
-    }   
+    }
+}
+
+class Q5
+{
+    public function importXML(string $filePath) : array
+    {
+        $res = [];
+        $xml = simplexml_load_file($filePath);
+        foreach ($xml as $node) {
+            if (isset($node->children()->uniqueID)) {
+                $res[(string)$node->children()->uniqueID] = $node->getName();
+            }
+        }
+        return $res;
+    }
 }
