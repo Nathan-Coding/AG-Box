@@ -25,3 +25,16 @@ class Q2
         return date('Y-m-d', strtotime(substr($str, 4)));
     }
 }
+
+class Q3
+{
+    public function stringMerge(string $s1, string $s2) : string
+    {
+        $res = '';
+        for ($i=0; $i < strlen($s1); $i++) {
+            $res .= substr($s1, $i, 1) . substr($s2, $i, 1);
+        }
+        $res .= strlen($s2) > strlen($s1) ? substr($s2, strlen($s1)) : '';
+        return $res;
+    }
+}
