@@ -38,3 +38,19 @@ class Q3
         return $res;
     }
 }
+
+class Q4
+{
+    public function superDigit(int $num) : int
+    {
+        while ($num >= 10) {
+            $res = 0;
+            while ($num >= 1) {
+                $res += $num % 10;
+                $num /= 10;
+            }
+            $num = $res;
+        }
+        return $num;
+    }   
+}
